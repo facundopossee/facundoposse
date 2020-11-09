@@ -1,4 +1,6 @@
-# This is my personal website
+# Facundo Posse 
 
-## Build in Nuxt.js 
+### This is my personal website under construction
+
+Contact me on <a href="https://twitter.com/FacundoPosse_">Twitter</a> or facundopossee@gmail.com
 
