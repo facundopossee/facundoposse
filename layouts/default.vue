@@ -1,7 +1,6 @@
 <template>
   <div>
     <Nuxt />
-    <cursor-fx color="#e9e9e9" hide-outside="true" inside-size="20px"/>
   </div>
 </template>
 
@@ -19,7 +18,7 @@ export default {
 html {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
+  font-size: 26px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -27,7 +26,6 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   background-color: black;
-  cursor: none !important;
 }
 
 *,
