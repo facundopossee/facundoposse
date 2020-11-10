@@ -1,5 +1,5 @@
 <template>
-  <vue-typer style="cursor:none"
+  <vue-typer
   class="content-line"
     :text="text"
     :repeat="repeat"

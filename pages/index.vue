@@ -27,8 +27,8 @@
                 v-show="show"
                 text="A fullstack developer
 based in Buenos Aires.
-I love make and mostly
-break things coding."
+I love making and mostly
+breaking things coding."
                 repeat="1"
                 preerasedelay="1000000000"
                 erasestyle="backspace"
@@ -41,7 +41,7 @@ break things coding."
         </div>
         <transition name="slide-fade">
           <div v-show="icons" class="flex justify-around md:justify-start pb-5">
-            <div class="rounded-full w-5 h-5 mr-5">
+            <div class="w-5 h-5 mr-5">
               <a href="https://github.com/facundopossee"
                 ><svg
                   aria-hidden="true"
@@ -60,7 +60,7 @@ break things coding."
                 </svg>
               </a>
             </div>
-            <div class="rounded-full w-5 h-5 mr-5">
+            <div class="w-5 h-5 mr-5">
               <a href="https://www.linkedin.com/in/facundo-posse/"
                 ><svg
                   aria-hidden="true"
@@ -79,7 +79,7 @@ break things coding."
                 </svg>
               </a>
             </div>
-            <div class="rounded-full w-5 h-5 mr-5">
+            <div class="w-5 h-5 mr-5">
               <a href="https://twitter.com/FacundoPosse_"
                 ><svg
                   aria-hidden="true"
@@ -98,7 +98,7 @@ break things coding."
                 </svg>
               </a>
             </div>
-            <div class="rounded-full w-5 h-5 mr-5">
+            <div class="w-5 h-5">
               <a href="mailto:facundopossee@gmail.com"
                 ><svg
                   aria-hidden="true"
@@ -149,6 +149,10 @@ export default {
 @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
+svg:hover path{
+  fill: #f44336;
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 1s;
