@@ -61,7 +61,7 @@ breaking things coding."
               </a>
             </div>
             <div class="w-5 h-5 mr-5">
-              <a href="https://www.linkedin.com/in/facundo-posse/"
+              <a href="https://www.linkedin.com/in/facundopossee/"
                 ><svg
                   aria-hidden="true"
                   focusable="false"
@@ -80,7 +80,7 @@ breaking things coding."
               </a>
             </div>
             <div class="w-5 h-5 mr-5">
-              <a href="https://twitter.com/FacundoPosse_"
+              <a href="https://twitter.com/facundopossee"
                 ><svg
                   aria-hidden="true"
                   focusable="false"
