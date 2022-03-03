@@ -25,12 +25,13 @@
               <Typer
                 class="text2"
                 v-show="show"
-                text="A fullstack developer
+                text="A Software Engineer
+and Blockchain Enthusiast
 based in Buenos Aires.
 I love making and mostly
 breaking things coding."
                 repeat="1"
-                preerasedelay="1000000000"
+                preerasedelay="1000000"
                 erasestyle="backspace"
                 caretanimation="smooth"
                 pretypedelay="2500"
@@ -129,7 +130,7 @@ export default {
   data() {
     return {
       show: false,
-      icons: false,
+      icons: false
     };
   },
   methods: {
@@ -138,8 +139,8 @@ export default {
     },
     showIcons() {
       this.icons = true;
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -149,7 +150,7 @@ export default {
 @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
-svg:hover path{
+svg:hover path {
   fill: #f44336;
 }
 
