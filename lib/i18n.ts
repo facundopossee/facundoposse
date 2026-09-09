@@ -74,16 +74,19 @@ export interface Dictionary {
   }
 }
 
+const CAREER_START_YEAR = 2018
+const yearsOfExperience = new Date().getFullYear() - CAREER_START_YEAR
+
 export const translations: Record<Lang, Dictionary> = {
   en: {
     htmlLang: 'en',
     meta: {
       title: 'Facundo Posse',
       description:
-        'Software engineer and product builder with over 8 years of experience taking digital products from problem definition to production.',
+        `Software engineer and product builder with over ${yearsOfExperience} years of experience taking digital products from problem definition to production.`,
       ogTitle: 'Facundo Posse - Software Engineer & Product Builder',
       ogDescription:
-        'Over 8 years building and operating digital products across product, engineering, delivery, and technical leadership.',
+        `Over ${yearsOfExperience} years building and operating digital products across product, engineering, delivery, and technical leadership.`,
     },
     header: {
       skipToContent: 'Skip to content',
@@ -101,7 +104,7 @@ export const translations: Record<Lang, Dictionary> = {
       whatsappCta: 'WhatsApp',
       whatsappAria: 'Send me a message on WhatsApp',
       proof: [
-        { value: '8+ years', label: 'Building software professionally' },
+        { value: `${yearsOfExperience}+ years`, label: 'Building software professionally' },
         { value: '60K+', label: 'Monthly users served' },
         { value: 'Live SaaS', label: 'Built, launched, and operated' },
       ],
@@ -200,10 +203,10 @@ export const translations: Record<Lang, Dictionary> = {
     meta: {
       title: 'Facundo Posse',
       description:
-        'Ingeniero de software y product builder con más de 8 años de experiencia llevando productos digitales desde la definición del problema hasta producción.',
+        `Ingeniero de software y product builder con más de ${yearsOfExperience} años de experiencia llevando productos digitales desde la definición del problema hasta producción.`,
       ogTitle: 'Facundo Posse - Ingeniero de Software y Product Builder',
       ogDescription:
-        'Más de 8 años construyendo y operando productos digitales en producto, ingeniería, delivery y liderazgo técnico.',
+        `Más de ${yearsOfExperience} años construyendo y operando productos digitales en producto, ingeniería, delivery y liderazgo técnico.`,
     },
     header: {
       skipToContent: 'Ir al contenido',
@@ -221,7 +224,7 @@ export const translations: Record<Lang, Dictionary> = {
       whatsappCta: 'WhatsApp',
       whatsappAria: 'Enviame un mensaje por WhatsApp',
       proof: [
-        { value: '8+ años', label: 'Construyendo software de forma profesional' },
+        { value: `${yearsOfExperience}+ años`, label: 'Construyendo software de forma profesional' },
         { value: '60K+', label: 'Usuarios activos mensuales' },
         { value: 'SaaS en producción', label: 'Construido, lanzado y operado' },
       ],
