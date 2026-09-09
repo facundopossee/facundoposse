@@ -4,7 +4,7 @@ import { GeistMono } from 'geist/font/mono'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Facundo Posse - Software Engineer & Product Builder',
+  title: 'Facundo Posse',
   description:
     'Software engineer and product builder with over 8 years of experience taking digital products from problem definition to production.',
   openGraph: {
