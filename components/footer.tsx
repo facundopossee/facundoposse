@@ -1,4 +1,10 @@
+'use client'
+
+import { useLanguage } from '@/lib/language-context'
+
 export default function Footer() {
+  const { t } = useLanguage()
+
   return (
     <footer className="border-t border-[var(--border)]">
       <div className="mx-auto flex max-w-5xl flex-col gap-3 px-5 py-8 text-sm text-[var(--text-muted)] sm:flex-row sm:items-center sm:justify-between sm:px-8">
@@ -8,7 +14,7 @@ export default function Footer() {
             href="mailto:facundopossee@gmail.com"
             className="inline-flex min-h-11 items-center transition-colors hover:text-[var(--text)]"
           >
-            Email
+            {t.footer.email}
           </a>
           <a
             href="https://wa.me/5491172798435"
@@ -16,7 +22,7 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="inline-flex min-h-11 items-center transition-colors hover:text-[var(--text)]"
           >
-            WhatsApp
+            {t.footer.whatsapp}
           </a>
           <a
             href="https://github.com/facundopossee"
@@ -24,10 +30,10 @@ export default function Footer() {
             rel="noopener noreferrer"
             className="inline-flex min-h-11 items-center transition-colors hover:text-[var(--text)]"
           >
-            GitHub
+            {t.footer.github}
           </a>
           <p className="inline-flex items-center gap-2">
-            Buenos Aires, Argentina
+            {t.footer.location}
             <span aria-hidden="true" className="leading-none">🇦🇷</span>
           </p>
         </div>

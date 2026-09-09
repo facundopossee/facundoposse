@@ -1,24 +1,38 @@
+'use client'
+
+import { useLanguage } from '@/lib/language-context'
+
 const linkClass =
   'min-h-11 items-center text-sm text-[var(--text-secondary)] transition-colors hover:text-[var(--text)]'
 
 export default function Header() {
+  const { lang, t, setLang } = useLanguage()
+
   return (
     <header className="sticky top-0 z-20 border-b border-[var(--border)] bg-[color:rgba(9,11,9,0.9)] backdrop-blur-md">
       <a href="#main-content" className="sr-only fixed left-4 top-4 z-30 bg-[var(--accent)] px-4 py-2 text-sm font-medium text-[var(--background)] focus:not-sr-only">
-        Skip to content
+        {t.header.skipToContent}
       </a>
       <div className="mx-auto flex min-h-16 max-w-5xl items-center justify-between px-5 sm:px-8">
         <a
           href="#main-content"
-          aria-label="Facundo Posse, back to top"
+          aria-label={t.header.logoAriaLabel}
           className="inline-flex min-h-11 min-w-11 items-center justify-start"
         >
           <img src="/icon.svg" alt="" width="28" height="28" />
         </a>
         <nav aria-label="Primary navigation" className="flex items-center gap-4 sm:gap-7">
-          <a href="#approach" className={`${linkClass} hidden sm:flex`}>Approach</a>
-          <a href="#experience" className={`${linkClass} flex`}>Experience</a>
-          <a href="https://www.linkedin.com/in/facundopossee/" target="_blank" rel="noopener noreferrer" className={`${linkClass} hidden sm:flex`}>LinkedIn</a>
+          <a href="#approach" className={`${linkClass} hidden sm:flex`}>{t.header.navApproach}</a>
+          <a href="#experience" className={`${linkClass} flex`}>{t.header.navExperience}</a>
+          <a href="https://www.linkedin.com/in/facundopossee/" target="_blank" rel="noopener noreferrer" className={`${linkClass} hidden sm:flex`}>{t.header.navLinkedin}</a>
+          <button
+            type="button"
+            onClick={() => setLang(lang === 'en' ? 'es' : 'en')}
+            aria-label={t.header.langToggleLabel}
+            className={`${linkClass} flex min-w-11 justify-center font-mono uppercase`}
+          >
+            {lang === 'en' ? 'ES' : 'EN'}
+          </button>
         </nav>
       </div>
     </header>

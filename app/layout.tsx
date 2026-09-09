@@ -1,16 +1,18 @@
 import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
+import { LanguageProvider } from '@/lib/language-context'
+import { translations } from '@/lib/i18n'
 import './globals.css'
 
+const t = translations.en
+
 export const metadata: Metadata = {
-  title: 'Facundo Posse',
-  description:
-    'Software engineer and product builder with over 8 years of experience taking digital products from problem definition to production.',
+  title: t.meta.title,
+  description: t.meta.description,
   openGraph: {
-    title: 'Facundo Posse - Software Engineer & Product Builder',
-    description:
-      'Over 8 years building and operating digital products across product, engineering, delivery, and technical leadership.',
+    title: t.meta.ogTitle,
+    description: t.meta.ogDescription,
     url: 'https://facundoposse.com',
     siteName: 'Facundo Posse',
     locale: 'en_US',
@@ -29,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body className="font-sans antialiased">
-        {children}
+        <LanguageProvider initialLang="en">{children}</LanguageProvider>
       </body>
     </html>
   )
