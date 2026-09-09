@@ -44,7 +44,7 @@ const experience = [
 
 export default function Experience() {
   return (
-    <section className="mx-auto max-w-2xl px-6 pt-10 pb-24">
+    <section className="mx-auto max-w-2xl px-6 pt-10 pb-16">
       <p className="mb-10 font-mono text-xs uppercase tracking-widest text-[#7d9e8e]">
         Experience
       </p>
