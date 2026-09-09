@@ -80,6 +80,8 @@ dist
 # IDE / Editor
 .idea
 .claude/
+.artifacts/
+.impeccable/
 
 # Service worker
 sw.*

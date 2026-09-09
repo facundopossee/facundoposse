@@ -4,17 +4,20 @@ import { GeistMono } from 'geist/font/mono'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Facundo Posse',
+  title: 'Facundo Posse - Software Engineer & Product Builder',
   description:
-    'Technical Leader & Software Engineer. Building secure, scalable digital platforms for regulated industries.',
+    'Software engineer and product builder with over 8 years of experience taking digital products from problem definition to production.',
   openGraph: {
-    title: 'Facundo Posse',
+    title: 'Facundo Posse - Software Engineer & Product Builder',
     description:
-      'Technical Leader & Software Engineer based in Buenos Aires, Argentina.',
+      'Over 8 years building and operating digital products across product, engineering, delivery, and technical leadership.',
     url: 'https://facundoposse.com',
     siteName: 'Facundo Posse',
     locale: 'en_US',
     type: 'website',
+  },
+  icons: {
+    icon: '/icon.svg',
   },
 }
 
@@ -25,7 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
-      <body className="bg-[#0a0a0a] text-[#e5e5e5] antialiased font-sans">
+      <body className="font-sans antialiased">
         {children}
       </body>
     </html>
