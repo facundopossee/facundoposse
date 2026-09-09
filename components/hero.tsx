@@ -1,10 +1,10 @@
 export default function Hero() {
   return (
-    <section className="mx-auto max-w-2xl px-6 pt-24 pb-24">
+    <section className="mx-auto max-w-2xl px-6 pt-16 pb-16 sm:pt-24 sm:pb-24">
       <p className="mb-4 font-mono text-xs uppercase tracking-widest text-[#7d9e8e]">
         Technical Leader · Software Engineer
       </p>
-      <h1 className="mb-6 text-5xl font-semibold tracking-tight text-[#e5e5e5]">
+      <h1 className="mb-6 text-4xl font-semibold tracking-tight text-[#e5e5e5] sm:text-5xl">
         Facundo Posse
       </h1>
       <p className="mb-10 max-w-lg leading-relaxed text-[#a3a3a3]">
