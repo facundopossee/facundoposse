@@ -32,6 +32,14 @@ export default function Footer() {
           >
             {t.footer.github}
           </a>
+          <a
+            href="https://linkedin.com/in/facundopossee"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-11 items-center transition-colors hover:text-[var(--text)]"
+          >
+            {t.header.navLinkedin}
+          </a>
           <p className="inline-flex items-center gap-2">
             {t.footer.location}
             <span aria-hidden="true" className="leading-none">🇦🇷</span>

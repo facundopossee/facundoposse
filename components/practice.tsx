@@ -29,6 +29,17 @@ export default function Practice() {
             </div>
           ))}
         </div>
+        <div className="mt-16">
+          <h2 className="text-balance text-3xl font-semibold tracking-[-0.03em] text-[var(--text)] sm:text-4xl">{t.practice.automation.heading}</h2>
+          <div className="mt-8 grid gap-8 border-t border-[var(--border)] pt-8 md:grid-cols-3 md:gap-12">
+            {t.practice.automation.items.map((item) => (
+              <div key={item.name}>
+                <h3 className="text-sm font-medium text-[var(--text)]">{item.name}</h3>
+                <p className="mt-3 text-sm leading-6 text-[var(--text-secondary)]">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   )
