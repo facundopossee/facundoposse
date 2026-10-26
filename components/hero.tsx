@@ -23,6 +23,14 @@ export default function Hero() {
             >
               {t.hero.whatsappCta}
             </a>
+            <a
+              href="/Facundo-Posse-CV-2026.pdf"
+              target="_blank"
+              rel="noopener"
+              className="inline-flex min-h-11 items-center border border-[var(--border)] px-5 text-sm font-medium text-[var(--text)] transition-colors hover:border-[var(--accent)] hover:text-[var(--accent-strong)] active:translate-y-px"
+            >
+              {t.hero.downloadCvCta}
+            </a>
           </div>
         </div>
         <dl className="hero-proof border-t border-[var(--border)] lg:border-t-0">

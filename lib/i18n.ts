@@ -43,6 +43,7 @@ export interface Dictionary {
     tagline: string
     subtitle: string
     emailCta: string
+    downloadCvCta: string
     whatsappCta: string
     whatsappAria: string
     proof: ProofItem[]
@@ -110,14 +111,15 @@ export const translations: Record<Lang, Dictionary> = {
     hero: {
       tagline: 'Technical Lead & Full-Stack Engineer',
       subtitle:
-        `${yearsOfExperience}+ years building production software and ${yearsAsTechnicalLead}+ years as Technical Lead of up to 15 engineers across parallel teams in banking and healthcare. A player-coach partnering with Product Owners on scalable architecture, setting quality standards through code reviews, testing and CI/CD, and growing engineers through pair programming and 1:1s. I use Claude Code and Codex every day, configure AI coding agents for teams, and design LLM agents and automations that remove manual work.`,
+        `${yearsOfExperience}+ years building production software and ${yearsAsTechnicalLead}+ years as Technical Lead of up to 15 engineers across parallel teams in banking and healthcare. Player-coach: I work with Product Owners to turn business needs into scalable architecture, set quality standards through code reviews, testing and CI/CD, and grow engineers through pair programming and 1:1s. I use AI coding agents (Claude Code, Codex) every day, set them up for teams, and design LLM agents and automations that remove manual work.`,
       emailCta: 'Email',
+      downloadCvCta: 'Download CV',
       whatsappCta: 'WhatsApp',
       whatsappAria: 'Send me a message on WhatsApp',
       proof: [
         { value: `${yearsOfExperience}+ years`, label: 'Building software professionally' },
-        { value: '~30K', label: 'Monthly active users — banking app' },
-        { value: 'Live SaaS', label: 'Built, launched, and operated' },
+        { value: '$230M+ monthly transfers', label: 'in a banking app I lead' },
+        { value: '$50K+ sold', label: 'through my own SaaS' },
       ],
     },
     practice: {
@@ -154,10 +156,8 @@ export const translations: Record<Lang, Dictionary> = {
           period: '2024 – Present',
           independent: true,
           bullets: [
-            'Build and operate 5–6 SaaS products used by 7–8 business clients',
-            'Design multi-tenant platforms serving multiple merchants, integrating authentication, payments and messaging',
+            'Design, build and operate 5+ SaaS products for small businesses: a multi-tenant ticketing platform where organizers have sold $50K+, plus order, stock and catalog management, loyalty programs and landing pages',
             'Built a native iOS app in SwiftUI with HealthKit integration.',
-            'Work directly with users and businesses to define scope, observe real usage, and iterate on the product',
           ],
         },
         {
@@ -167,10 +167,11 @@ export const translations: Record<Lang, Dictionary> = {
           bullets: [
             'Lead and mentor up to 15 engineers across parallel teams of 2–10 covering backend, frontend and database, coordinating with QA, UX, security, architecture and release; evaluated 20+ candidates and hired ~10',
             'Work with Product Owners to turn business needs into technical solutions, defining architecture directly or through architecture review',
-            'Brought AI coding agents into the team’s workflow in 2024, shortening delivery times',
+            'Brought AI coding agents into the team’s workflow in 2024, shortening delivery times; built a 400+ test Playwright E2E suite as a release gate',
             'Own AWS/Azure infrastructure, CI/CD and observability',
-            'Healthcare: IT partner for a private hospital and its health plan (~100K patients, ~30K plan members), across members, providers, pharmacy and digital channels; provider portal for eligibility and invoicing, member digital credentials, embedded appointment scheduling, COVID-19 vaccination registration and SAP integration',
-            'Banking: mobile banking app with ~30K monthly active users (4.6★ iOS, 50K+ Android downloads), featuring digital-wallet provisioning, real-time card data, rewards and biometric authentication',
+            'Prepare effort estimates and technical proposals for new and existing clients, including enterprise data-modernization bids',
+            'Banking — Credicorp Bank (Panama): mobile banking app with ~30K monthly active users, ~85K transactions and $230M+ in transfers per month: digital-wallet provisioning, real-time card data, rewards redemption and biometric authentication',
+            'Healthcare — Hospital Británico (Argentina): IT partner for the hospital and its health plan (~100K patients, ~30K plan members) across members, providers, pharmacy and digital channels: provider portal (eligibility + invoicing), member digital credentials, embedded appointment scheduling, COVID-19 vaccination registration, SAP integration, e-prescriptions integrated with a major health insurer',
           ],
         },
         {
@@ -178,9 +179,7 @@ export const translations: Record<Lang, Dictionary> = {
           role: 'Full Stack Developer',
           period: 'Feb 2021 - Dec 2021',
           bullets: [
-            'Developed features for digital health platforms using .NET and React: patient scheduling, clinical workflows, and internal tooling',
-            'Built and integrated APIs connecting health systems with medical insurance providers for coverage verification and operational automation',
-            'Optimized Azure pipelines and SQL workloads supporting high-availability healthcare operations',
+            'Built healthcare platforms for Hospital Británico (Argentina) with .NET and React: scheduling, e-prescriptions, insurance integrations and billing.',
           ],
         },
         {
@@ -237,12 +236,13 @@ export const translations: Record<Lang, Dictionary> = {
       subtitle:
         `${yearsOfExperience}+ años construyendo software en producción y ${yearsAsTechnicalLead}+ años como líder técnico de hasta 15 ingenieros en equipos paralelos de banca y salud. Combino liderazgo y desarrollo: trabajo con Product Owners en arquitecturas escalables, establezco estándares de calidad mediante revisiones de código, testing y CI/CD, y acompaño a los ingenieros con pair programming y 1:1s. Uso Claude Code y Codex a diario, configuro agentes de IA para equipos y diseño agentes LLM y automatizaciones que eliminan trabajo manual.`,
       emailCta: 'Email',
+      downloadCvCta: 'Descargar CV',
       whatsappCta: 'WhatsApp',
       whatsappAria: 'Enviame un mensaje por WhatsApp',
       proof: [
         { value: `${yearsOfExperience}+ años`, label: 'Construyendo software de forma profesional' },
-        { value: '~30K', label: 'Usuarios activos mensuales — app bancaria' },
-        { value: 'SaaS en producción', label: 'Construido, lanzado y operado' },
+        { value: '$230M+ en transferencias mensuales', label: 'en una app bancaria que lidero' },
+        { value: '$50K+ vendidos', label: 'a través de mis propios SaaS' },
       ],
     },
     practice: {
@@ -279,10 +279,8 @@ export const translations: Record<Lang, Dictionary> = {
           period: '2024 - Presente',
           independent: true,
           bullets: [
-            'Construyo y opero 5–6 productos SaaS usados por 7–8 clientes comerciales',
-            'Diseño plataformas multi-tenant para múltiples comercios, con autenticación, pagos y mensajería',
+            'Diseño, construyo y opero 5+ productos SaaS para pequeños negocios: una plataforma multi-tenant de venta de entradas donde los organizadores vendieron $50K+, además de gestión de pedidos, stock y catálogos, programas de fidelización y landing pages',
             'Construí una app nativa de iOS en SwiftUI con integración con HealthKit.',
-            'Trabajo directamente con usuarios y negocios para definir el alcance, observar el uso real e iterar sobre el producto',
           ],
         },
         {
@@ -292,10 +290,11 @@ export const translations: Record<Lang, Dictionary> = {
           bullets: [
             'Lidero y mentoreo hasta 15 ingenieros en equipos paralelos de 2–10 de backend, frontend y base de datos, coordinando con QA, UX, seguridad, arquitectura y release; evalué 20+ candidatos y contraté ~10',
             'Trabajo con Product Owners para convertir necesidades de negocio en soluciones técnicas, definiendo la arquitectura directamente o mediante revisión de arquitectura',
-            'Incorporé agentes de IA al flujo de trabajo del equipo en 2024, acortando los tiempos de entrega',
+            'Incorporé agentes de IA al flujo de trabajo del equipo en 2024, acortando los tiempos de entrega; construí una suite E2E de 400+ tests con Playwright como requisito para liberar versiones',
             'Soy responsable de infraestructura AWS/Azure, CI/CD y observabilidad',
-            'Salud: socio de TI de un hospital privado y su plan de salud (~100K pacientes, ~30K afiliados), abarcando afiliados, prestadores, farmacia y canales digitales; portal de prestadores con elegibilidad y facturación, credenciales digitales, turnos integrados, registro de vacunación COVID-19 e integración con SAP',
-            'Banca: app de banca móvil con ~30K usuarios activos mensuales (4.6★ en iOS, 50K+ descargas en Android), con aprovisionamiento de billeteras digitales, datos de tarjetas en tiempo real, recompensas y autenticación biométrica',
+            'Preparo estimaciones de esfuerzo y propuestas técnicas para clientes nuevos y existentes, incluidas licitaciones de modernización de datos empresariales',
+            'Banca — Credicorp Bank (Panama): app de banca móvil con ~30K usuarios activos mensuales, ~85K transacciones y $230M+ en transferencias por mes: aprovisionamiento de billeteras digitales, datos de tarjetas en tiempo real, canje de recompensas y autenticación biométrica',
+            'Salud — Hospital Británico (Argentina): socio de TI del hospital y su plan de salud (~100K pacientes, ~30K afiliados) en afiliados, prestadores, farmacia y canales digitales: portal de prestadores (elegibilidad + facturación), credenciales digitales, turnos integrados, registro de vacunación COVID-19, integración con SAP y recetas electrónicas integradas con una aseguradora de salud importante',
           ],
         },
         {
@@ -303,9 +302,7 @@ export const translations: Record<Lang, Dictionary> = {
           role: 'Desarrollador Full Stack',
           period: 'Feb 2021 - Dic 2021',
           bullets: [
-            'Desarrollé funcionalidades para plataformas de salud digital usando .NET y React: turnos de pacientes, flujos clínicos y herramientas internas',
-            'Construí e integré APIs que conectan sistemas de salud con obras sociales para verificación de cobertura y automatización operativa',
-            'Optimicé pipelines de Azure y cargas de trabajo SQL que dan soporte a operaciones de salud de alta disponibilidad',
+            'Construí plataformas de salud para Hospital Británico (Argentina) con .NET y React: turnos, recetas electrónicas, integraciones con seguros y facturación.',
           ],
         },
         {
