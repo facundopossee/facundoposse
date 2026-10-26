@@ -52,6 +52,10 @@ export interface Dictionary {
     intro: string
     stages: Stage[]
     technologyGroups: TechGroup[]
+    automation: {
+      heading: string
+      items: Stage[]
+    }
   }
   experience: {
     heading: string
@@ -75,18 +79,25 @@ export interface Dictionary {
 }
 
 const CAREER_START_YEAR = 2018
-const yearsOfExperience = new Date().getFullYear() - CAREER_START_YEAR
+const CAREER_START_MONTH = 1 // February (zero-based)
+const now = new Date()
+const yearsOfExperience = now.getFullYear() - CAREER_START_YEAR
+  - (now.getMonth() < CAREER_START_MONTH ? 1 : 0)
+const TECH_LEAD_START_YEAR = 2021
+const TECH_LEAD_START_MONTH = 11 // December (zero-based)
+const yearsAsTechnicalLead = now.getFullYear() - TECH_LEAD_START_YEAR
+  - (now.getMonth() < TECH_LEAD_START_MONTH ? 1 : 0)
 
 export const translations: Record<Lang, Dictionary> = {
   en: {
     htmlLang: 'en',
     meta: {
-      title: 'Facundo Posse',
+      title: 'Facundo Posse - Technical Lead & Full-Stack Engineer',
       description:
-        `Software engineer and product builder with over ${yearsOfExperience} years of experience taking digital products from problem definition to production.`,
-      ogTitle: 'Facundo Posse - Software Engineer & Product Builder',
+        `Technical Lead & Full-Stack Engineer with ${yearsOfExperience}+ years building production software and ${yearsAsTechnicalLead}+ years leading up to 15 engineers across parallel teams in banking and healthcare.`,
+      ogTitle: 'Facundo Posse - Technical Lead & Full-Stack Engineer',
       ogDescription:
-        `Over ${yearsOfExperience} years building and operating digital products across product, engineering, delivery, and technical leadership.`,
+        `Technical Lead & Full-Stack Engineer. ${yearsOfExperience}+ years building production software, ${yearsAsTechnicalLead}+ years of technical leadership, and daily work with AI coding agents and business automation.`,
     },
     header: {
       skipToContent: 'Skip to content',
@@ -97,15 +108,15 @@ export const translations: Record<Lang, Dictionary> = {
       langToggleLabel: 'Cambiar a español',
     },
     hero: {
-      tagline: 'I turn real problems into working products.',
+      tagline: 'Technical Lead & Full-Stack Engineer',
       subtitle:
-        'Software engineer and product builder combining product judgment, hands-on engineering, delivery, and leadership.',
+        `${yearsOfExperience}+ years building production software and ${yearsAsTechnicalLead}+ years as Technical Lead of up to 15 engineers across parallel teams in banking and healthcare. A player-coach partnering with Product Owners on scalable architecture, setting quality standards through code reviews, testing and CI/CD, and growing engineers through pair programming and 1:1s. I use Claude Code and Codex every day, configure AI coding agents for teams, and design LLM agents and automations that remove manual work.`,
       emailCta: 'Email',
       whatsappCta: 'WhatsApp',
       whatsappAria: 'Send me a message on WhatsApp',
       proof: [
         { value: `${yearsOfExperience}+ years`, label: 'Building software professionally' },
-        { value: '60K+', label: 'Monthly users served' },
+        { value: '~30K', label: 'Monthly active users — banking app' },
         { value: 'Live SaaS', label: 'Built, launched, and operated' },
       ],
     },
@@ -122,8 +133,17 @@ export const translations: Record<Lang, Dictionary> = {
       technologyGroups: [
         { name: 'Product interfaces', items: 'React, React Native, Next.js, SwiftUI, Vue.js' },
         { name: 'Services and data', items: 'Node.js, Python, .NET, PostgreSQL, Supabase' },
-        { name: 'Platforms and delivery', items: 'AWS, Azure, Vercel, CI/CD, observability' },
+        { name: 'Platforms and delivery', items: 'AWS, Azure, Vercel, CI/CD, observability, Playwright' },
+        { name: 'AI development', items: 'Claude Code, Codex, agentic workflows / prompt engineering' },
       ],
+      automation: {
+        heading: 'AI & Automation',
+        items: [
+          { name: 'Agentic software development', description: 'Claude Code, Codex and other AI tools across planning, implementation, testing, code review and debugging.' },
+          { name: 'Agent tooling & E2E automation', description: 'Team-wide agent configuration: instruction files, permission policies and pre-execution hooks. Built a 400+ test Playwright E2E suite as a release gate.' },
+          { name: 'LLM agents & business automation', description: 'Task-specific agents, reusable prompt templates, browser automation and data pipelines that replace repetitive operational work.' },
+        ],
+      },
     },
     experience: {
       heading: 'Experience',
@@ -131,25 +151,26 @@ export const translations: Record<Lang, Dictionary> = {
         {
           company: 'Self-directed',
           role: 'Independent Product Builder',
-          period: '2024 - Present',
+          period: '2024 – Present',
           independent: true,
           bullets: [
-            'Build and operate commercial SaaS products for small businesses, covering discovery, UX, pricing, engineering, infrastructure, and production support',
-            'Design multi-tenant platforms integrating payments, authentication, messaging, digital wallets, and operational workflows',
-            'Built and validated focused product experiments, including a native iOS app using SwiftUI and HealthKit',
+            'Build and operate 5–6 SaaS products used by 7–8 business clients',
+            'Design multi-tenant platforms serving multiple merchants, integrating authentication, payments and messaging',
+            'Built a native iOS app in SwiftUI with HealthKit integration.',
             'Work directly with users and businesses to define scope, observe real usage, and iterate on the product',
           ],
         },
         {
           company: 'N5 Now',
-          role: 'Technical Leader',
-          period: 'Dec 2021 - Present',
+          role: 'Technical Lead',
+          period: 'Dec 2021 – Present',
           bullets: [
-            'Led mobile banking and digital health platforms for clients in highly regulated industries, serving 60K+ monthly active users',
-            'Delivered banking features including digital wallets, real-time card data, rewards, and biometric authentication flows',
-            'Led evolution of healthcare platforms for a top-tier private medical network: patient scheduling, electronic prescriptions, insurance integrations, billing, and clinical imaging access',
-            'Owned CI/CD pipelines and cloud infrastructure on AWS and Azure, ensuring high-availability deployments across production environments',
-            'Led and mentored cross-functional teams of 5-15 engineers across multiple product streams',
+            'Lead and mentor up to 15 engineers across parallel teams of 2–10 covering backend, frontend and database, coordinating with QA, UX, security, architecture and release; evaluated 20+ candidates and hired ~10',
+            'Work with Product Owners to turn business needs into technical solutions, defining architecture directly or through architecture review',
+            'Brought AI coding agents into the team’s workflow in 2024, shortening delivery times',
+            'Own AWS/Azure infrastructure, CI/CD and observability',
+            'Healthcare: IT partner for a private hospital and its health plan (~100K patients, ~30K plan members), across members, providers, pharmacy and digital channels; provider portal for eligibility and invoicing, member digital credentials, embedded appointment scheduling, COVID-19 vaccination registration and SAP integration',
+            'Banking: mobile banking app with ~30K monthly active users (4.6★ iOS, 50K+ Android downloads), featuring digital-wallet provisioning, real-time card data, rewards and biometric authentication',
           ],
         },
         {
@@ -170,14 +191,9 @@ export const translations: Record<Lang, Dictionary> = {
             'Developed and maintained sales, e-commerce, and internal productivity platforms using .NET and Vue.js',
             'Integrated ERP system (Dynamics AX) to automate operational workflows',
             'Delivered inventory, production control, and order management features',
-            'Improved SQL-based data operations and supported CI/CD and Azure cloud migration',
+            'Improved SQL-based data operations and supported CI/CD',
+            'Migrated APIs, frontends and databases to Azure',
           ],
-        },
-        {
-          company: 'Sanatorio Adventista de Hohenau',
-          role: '.NET Developer, Intern',
-          period: 'Dec 2016 - Feb 2017',
-          bullets: ['Supported system modernization by migrating legacy solutions to .NET technologies'],
         },
       ],
     },
@@ -195,18 +211,18 @@ export const translations: Record<Lang, Dictionary> = {
       email: 'Email',
       whatsapp: 'WhatsApp',
       github: 'GitHub',
-      location: 'Buenos Aires, Argentina',
+      location: 'Munro, Buenos Aires, Argentina',
     },
   },
   es: {
     htmlLang: 'es',
     meta: {
-      title: 'Facundo Posse',
+      title: 'Facundo Posse - Líder Técnico e Ingeniero Full-Stack',
       description:
-        `Ingeniero de software y product builder con más de ${yearsOfExperience} años de experiencia llevando productos digitales desde la definición del problema hasta producción.`,
-      ogTitle: 'Facundo Posse - Ingeniero de Software y Product Builder',
+        `Líder Técnico e Ingeniero Full-Stack con ${yearsOfExperience}+ años construyendo software en producción y ${yearsAsTechnicalLead}+ años liderando hasta 15 ingenieros en equipos paralelos de banca y salud.`,
+      ogTitle: 'Facundo Posse - Líder Técnico e Ingeniero Full-Stack',
       ogDescription:
-        `Más de ${yearsOfExperience} años construyendo y operando productos digitales en producto, ingeniería, delivery y liderazgo técnico.`,
+        `Líder Técnico e Ingeniero Full-Stack. ${yearsOfExperience}+ años construyendo software en producción, ${yearsAsTechnicalLead}+ años de liderazgo técnico y trabajo diario con agentes de IA y automatización de negocios.`,
     },
     header: {
       skipToContent: 'Ir al contenido',
@@ -217,15 +233,15 @@ export const translations: Record<Lang, Dictionary> = {
       langToggleLabel: 'Switch to English',
     },
     hero: {
-      tagline: 'Convierto problemas reales en productos que funcionan.',
+      tagline: 'Líder Técnico e Ingeniero Full-Stack',
       subtitle:
-        'Ingeniero de software y product builder que combina criterio de producto, ingeniería hands-on, delivery y liderazgo.',
+        `${yearsOfExperience}+ años construyendo software en producción y ${yearsAsTechnicalLead}+ años como líder técnico de hasta 15 ingenieros en equipos paralelos de banca y salud. Combino liderazgo y desarrollo: trabajo con Product Owners en arquitecturas escalables, establezco estándares de calidad mediante revisiones de código, testing y CI/CD, y acompaño a los ingenieros con pair programming y 1:1s. Uso Claude Code y Codex a diario, configuro agentes de IA para equipos y diseño agentes LLM y automatizaciones que eliminan trabajo manual.`,
       emailCta: 'Email',
       whatsappCta: 'WhatsApp',
       whatsappAria: 'Enviame un mensaje por WhatsApp',
       proof: [
         { value: `${yearsOfExperience}+ años`, label: 'Construyendo software de forma profesional' },
-        { value: '60K+', label: 'Usuarios activos mensuales' },
+        { value: '~30K', label: 'Usuarios activos mensuales — app bancaria' },
         { value: 'SaaS en producción', label: 'Construido, lanzado y operado' },
       ],
     },
@@ -242,8 +258,17 @@ export const translations: Record<Lang, Dictionary> = {
       technologyGroups: [
         { name: 'Interfaces de producto', items: 'React, React Native, Next.js, SwiftUI, Vue.js' },
         { name: 'Servicios y datos', items: 'Node.js, Python, .NET, PostgreSQL, Supabase' },
-        { name: 'Plataformas y delivery', items: 'AWS, Azure, Vercel, CI/CD, observability' },
+        { name: 'Plataformas y delivery', items: 'AWS, Azure, Vercel, CI/CD, observability, Playwright' },
+        { name: 'Desarrollo con IA', items: 'Claude Code, Codex, agentic workflows / prompt engineering' },
       ],
+      automation: {
+        heading: 'IA y automatización',
+        items: [
+          { name: 'Desarrollo con agentes de IA', description: 'Claude Code, Codex y otras herramientas de IA en planificación, implementación, testing, revisión de código y debugging.' },
+          { name: 'Herramientas de agentes y automatización E2E', description: 'Configuración de agentes para todo el equipo: archivos de instrucciones, políticas de permisos y hooks previos a la ejecución. Construí una suite E2E de 400+ tests con Playwright como requisito para liberar versiones.' },
+          { name: 'Agentes LLM y automatización de negocios', description: 'Agentes para tareas específicas, plantillas de prompts reutilizables, automatización de navegador y pipelines de datos que reemplazan trabajo operativo repetitivo.' },
+        ],
+      },
     },
     experience: {
       heading: 'Experiencia',
@@ -254,22 +279,23 @@ export const translations: Record<Lang, Dictionary> = {
           period: '2024 - Presente',
           independent: true,
           bullets: [
-            'Construyo y opero productos SaaS comerciales para pequeñas empresas, cubriendo discovery, UX, pricing, ingeniería, infraestructura y soporte en producción',
-            'Diseño plataformas multi-tenant que integran pagos, autenticación, mensajería, billeteras digitales y flujos operativos',
-            'Construí y validé experimentos de producto puntuales, incluyendo una app nativa de iOS con SwiftUI y HealthKit',
+            'Construyo y opero 5–6 productos SaaS usados por 7–8 clientes comerciales',
+            'Diseño plataformas multi-tenant para múltiples comercios, con autenticación, pagos y mensajería',
+            'Construí una app nativa de iOS en SwiftUI con integración con HealthKit.',
             'Trabajo directamente con usuarios y negocios para definir el alcance, observar el uso real e iterar sobre el producto',
           ],
         },
         {
           company: 'N5 Now',
-          role: 'Tech Lead',
-          period: 'Dic 2021 - Presente',
+          role: 'Líder Técnico',
+          period: 'Dic 2021 – Presente',
           bullets: [
-            'Lideré plataformas de banca móvil y salud digital para clientes en industrias altamente reguladas, con más de 60K usuarios activos mensuales',
-            'Entregué funcionalidades bancarias como billeteras digitales, datos de tarjeta en tiempo real, recompensas y flujos de autenticación biométrica',
-            'Lideré la evolución de plataformas de salud para una red de medicina privada de primer nivel: turnos de pacientes, recetas electrónicas, integraciones con obras sociales, facturación y acceso a imágenes clínicas',
-            'Manejé los pipelines de CI/CD y la infraestructura cloud en AWS y Azure, asegurando despliegues de alta disponibilidad en producción',
-            'Lideré y mentoreé equipos multidisciplinarios de 5 a 15 ingenieros en múltiples líneas de producto',
+            'Lidero y mentoreo hasta 15 ingenieros en equipos paralelos de 2–10 de backend, frontend y base de datos, coordinando con QA, UX, seguridad, arquitectura y release; evalué 20+ candidatos y contraté ~10',
+            'Trabajo con Product Owners para convertir necesidades de negocio en soluciones técnicas, definiendo la arquitectura directamente o mediante revisión de arquitectura',
+            'Incorporé agentes de IA al flujo de trabajo del equipo en 2024, acortando los tiempos de entrega',
+            'Soy responsable de infraestructura AWS/Azure, CI/CD y observabilidad',
+            'Salud: socio de TI de un hospital privado y su plan de salud (~100K pacientes, ~30K afiliados), abarcando afiliados, prestadores, farmacia y canales digitales; portal de prestadores con elegibilidad y facturación, credenciales digitales, turnos integrados, registro de vacunación COVID-19 e integración con SAP',
+            'Banca: app de banca móvil con ~30K usuarios activos mensuales (4.6★ en iOS, 50K+ descargas en Android), con aprovisionamiento de billeteras digitales, datos de tarjetas en tiempo real, recompensas y autenticación biométrica',
           ],
         },
         {
@@ -290,14 +316,9 @@ export const translations: Record<Lang, Dictionary> = {
             'Desarrollé y mantuve plataformas de ventas, e-commerce y productividad interna usando .NET y Vue.js',
             'Integré un sistema ERP (Dynamics AX) para automatizar flujos operativos',
             'Entregué funcionalidades de inventario, control de producción y gestión de pedidos',
-            'Mejoré operaciones de datos en SQL y participé en CI/CD y la migración a Azure',
+            'Mejoré operaciones de datos en SQL y participé en CI/CD',
+            'Migré APIs, frontends y bases de datos a Azure',
           ],
-        },
-        {
-          company: 'Sanatorio Adventista de Hohenau',
-          role: 'Desarrollador .NET, Pasante',
-          period: 'Dic 2016 - Feb 2017',
-          bullets: ['Apoyé la modernización de sistemas migrando soluciones legacy a tecnologías .NET'],
         },
       ],
     },
@@ -315,7 +336,7 @@ export const translations: Record<Lang, Dictionary> = {
       email: 'Email',
       whatsapp: 'WhatsApp',
       github: 'GitHub',
-      location: 'Buenos Aires, Argentina',
+      location: 'Munro, Buenos Aires, Argentina',
     },
   },
 }

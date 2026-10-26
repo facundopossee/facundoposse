@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: t.meta.ogTitle,
     description: t.meta.ogDescription,
-    url: 'https://facundoposse.com',
+    url: 'https://facundoposse.com.ar',
     siteName: 'Facundo Posse',
     locale: 'en_US',
     type: 'website',
