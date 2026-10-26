@@ -211,7 +211,7 @@ export const translations: Record<Lang, Dictionary> = {
       email: 'Email',
       whatsapp: 'WhatsApp',
       github: 'GitHub',
-      location: 'Munro, Buenos Aires, Argentina',
+      location: 'Buenos Aires, Argentina',
     },
   },
   es: {
@@ -336,7 +336,7 @@ export const translations: Record<Lang, Dictionary> = {
       email: 'Email',
       whatsapp: 'WhatsApp',
       github: 'GitHub',
-      location: 'Munro, Buenos Aires, Argentina',
+      location: 'Buenos Aires, Argentina',
     },
   },
 }
